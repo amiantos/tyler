@@ -1,0 +1,33 @@
+version: '3.8'
+
+services:
+  tyler:
+    build:
+      context: .
+      dockerfile: ./backend/Dockerfile
+    container_name: tyler
+    privileged: true
+    devices:
+      - /dev/fuse
+      - /dev/mapper/control
+    volumes:
+      - ./data:/app/data
+      - ./containers:/app/containers
+      - tyler-encrypted:/mnt/encrypted
+      - /var/run/docker.sock:/var/run/docker.sock
+      - /dev:/dev
+    environment:
+      - NODE_ENV=production
+      - VERACRYPT_NOKERNELCRYPTO=1
+    ports:
+      - "3001:3001"  # Main web interface
+      - "8000:8000"  # SillyTavern web interface
+    restart: unless-stopped
+    cap_add:
+      - SYS_ADMIN
+      - MKNOD
+
+
+volumes:
+  tyler-encrypted:
+    driver: local

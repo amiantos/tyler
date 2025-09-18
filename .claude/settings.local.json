@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "WebSearch",
+      "Bash(docker compose restart:*)",
+      "WebFetch(domain:github.com)",
+      "Bash(docker exec:*)",
+      "Bash(docker compose build:*)",
+      "Bash(docker system:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
