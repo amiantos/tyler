@@ -24,9 +24,9 @@ Tyler creates an encrypted, isolated environment for SillyTavern using LUKS encr
 
 2. **Setup Your Container**:
    - Open `http://localhost:3001` in your browser
-   - Click "Create Container"
    - Set a strong encryption password
    - Choose container size (minimum 5GB)
+   - Click "Let's Do It"
 
 3. **Use SillyTavern**:
    - Mount your container with your password
