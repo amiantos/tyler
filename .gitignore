@@ -139,5 +139,7 @@ vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
 
 # Tyler encrypted container data
-data/
-containers/
+data/*
+!data/.gitkeep
+containers/*
+!containers/.gitkeep
